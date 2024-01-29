@@ -4,14 +4,16 @@ namespace common
 {
     class Date
     {
-    private:
+    public:
         int m_day;
         int m_month;
         int m_year;
 
-    public:
-        Date() = delete;
-        Date(int &d, int &m, int &y);
+        Date();
+        Date(int d, int m, int y)
+            : m_day(d), m_month(m), m_year(y)
+        {
+        }
 
         int Day()
         {

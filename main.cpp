@@ -1,11 +1,11 @@
 #include <iostream>
 #include <memory>
 
-#include "classes/Fleet.h"
+#include "functionality/EntryPoint.h"
 
 int main()
 {
-    auto fleet = std::make_unique<management::Fleet>();
+    auto fleet = std::make_shared<management::Fleet>();
 
     fleet->addCar(std::make_unique<management::Car>("Mercedes", "C200"));
     fleet->addCar(std::make_unique<management::Car>("BMW", "520i"));
@@ -14,5 +14,5 @@ int main()
     fleet->addCar(std::make_unique<management::Car>("Porsche", "911"));
     fleet->addCar(std::make_unique<management::Car>("Hyundai", "i30"));
 
-    fleet->DisplayAllCars();
+    StartUI(fleet);
 }
