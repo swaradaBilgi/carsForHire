@@ -23,14 +23,29 @@ namespace management
                   << std::endl;
         std::cout << "Car                     Seating capacity" << std::endl;
 
+        int index = 1;
+
         for (auto &it : m_cars)
         {
+            std::cout << index;
             it.Display();
+            index++;
         }
     }
 
     void Fleet::addCar(std::shared_ptr<management::Car> car)
     {
         m_cars.push_back(*car);
+    }
+
+    std::shared_ptr<management::Car> Fleet::CarAtIndex(int index)
+    {
+        if (index > m_cars.size())
+        {
+            std::cout << "Wrong selection" << std::endl;
+            return NULL;
+        }
+
+        return std::make_shared<management::Car>(m_cars.at(index));
     }
 } // namespace management

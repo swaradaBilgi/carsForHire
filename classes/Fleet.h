@@ -17,5 +17,6 @@ namespace management
 
         void DisplayAllCars();
         void addCar(std::shared_ptr<management::Car> car);
+        std::shared_ptr<management::Car> CarAtIndex(int index);
     };
 } // namespace management

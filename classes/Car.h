@@ -27,5 +27,7 @@ namespace management
         void SetSeatingCapacity(int &seats);
 
         void Display();
+        void addBooking();
+        bool isAvailable(common::Date date);
     };
 } // namespace management
