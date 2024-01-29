@@ -115,4 +115,9 @@ namespace management
         return true;
     }
 
+    std::vector<common::Booking> Car::Bookings()
+    {
+        return m_bookings;
+    }
+
 } // namespace management

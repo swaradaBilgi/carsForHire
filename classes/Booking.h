@@ -22,5 +22,10 @@ namespace common
         {
             return m_dates;
         }
+
+        common::Customer Customer()
+        {
+            return m_customer;
+        }
     };
 } // namespace common

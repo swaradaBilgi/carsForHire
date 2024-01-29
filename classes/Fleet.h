@@ -15,6 +15,7 @@ namespace management
         Fleet(std::vector<management::Car> &cars);
         ~Fleet();
 
+        std::vector<management::Car> Cars();
         void DisplayAllCars();
         void addCar(std::shared_ptr<management::Car> car);
         std::shared_ptr<management::Car> CarAtIndex(int index);

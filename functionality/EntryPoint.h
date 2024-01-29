@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "UserFunctions.h"
+#include "companyFunctions.h"
 
 void StartUI(std::shared_ptr<management::Fleet> &fleet)
 {

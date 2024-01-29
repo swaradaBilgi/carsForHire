@@ -25,6 +25,7 @@ namespace management
         void SetModel(std::string &model);
         int SeatingCapacity();
         void SetSeatingCapacity(int &seats);
+        std::vector<common::Booking> Bookings();
 
         void Display();
         void addBooking();

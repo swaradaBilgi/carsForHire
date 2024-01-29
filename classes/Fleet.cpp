@@ -48,4 +48,9 @@ namespace management
 
         return std::make_shared<management::Car>(m_cars.at(index));
     }
+
+    std::vector<management::Car> Fleet::Cars()
+    {
+        return m_cars;
+    }
 } // namespace management
