@@ -47,13 +47,15 @@ void CancelBooking(std::shared_ptr<management::Fleet> &fleet)
     }
 }
 
-void DisplayUserFunctions(std::shared_ptr<management::Fleet> &fleet)
+int DisplayUserFunctions(std::shared_ptr<management::Fleet> &fleet)
 {
+
     int selection = 0;
     std::cout << "Enter the operation to execute from the options below : " << std::endl
               << std::endl;
     std::cout << "Press 1 to book a car" << std::endl;
     std::cout << "Press 2 to cancel a reservation" << std::endl;
+    std::cout << "Press 9 to go to home page" << std::endl;
     std::cin >> selection;
 
     switch (selection)
@@ -65,11 +67,15 @@ void DisplayUserFunctions(std::shared_ptr<management::Fleet> &fleet)
     }
     case 2:
     {
-        CancelBooking();
+        CancelBooking(fleet);
         break;
     }
-
+    case 9:
+        return 0;
+        break;
     default:
         break;
     }
+
+    return 1;
 }
