@@ -22,18 +22,21 @@ void removeCar(std::shared_ptr<management::Fleet> &fleet)
     std::cin >> model;
 
     int carIndex = 0;
+    bool found = false;
     for (auto car : fleet->Cars())
     {
         if ((car.Brand() == brand) && (car.Model() == model))
         {
+            found = true;
             fleet->Cars().erase(fleet->Cars().begin() + carIndex - 1);
             std::cout << "Car removed from fleet" << std::endl;
         }
-        else
-        {
-            std::cout << "Car not found" << std::endl;
-        }
         carIndex++;
+    }
+
+    if (!found)
+    {
+        std::cout << "Car not found" << std::endl;
     }
 }
 

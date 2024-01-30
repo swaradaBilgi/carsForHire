@@ -27,7 +27,7 @@ namespace management
 
         for (auto &it : m_cars)
         {
-            std::cout << index;
+            std::cout << index << "  ";
             it.Display();
             index++;
         }

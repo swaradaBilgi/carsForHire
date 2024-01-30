@@ -13,6 +13,7 @@ void StartUI(std::shared_ptr<management::Fleet> &fleet)
                   << std::endl;
         std::cout << "Press 1 to book a car" << std::endl;
         std::cout << "Press 2 if you are our employee" << std::endl;
+        std::cout << "Press 9 to exit" << std::endl;
         std::cout << "Press any other key to exit" << std::endl;
 
         int a;
@@ -25,6 +26,9 @@ void StartUI(std::shared_ptr<management::Fleet> &fleet)
             break;
         case 2:
             uiRepeat = DisplayInternalFunctions(fleet);
+            break;
+        case 9:
+            uiRepeat = 0;
             break;
         default:
             std::cout << "Wrong selection" << std::endl;
