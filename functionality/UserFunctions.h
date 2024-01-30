@@ -24,6 +24,7 @@ void CancelBooking(std::shared_ptr<management::Fleet> &fleet)
     std::cin >> lastName;
 
     int carIndex = 0;
+    bool found = false;
 
     for (auto car : fleet->Cars())
     {
@@ -33,17 +34,18 @@ void CancelBooking(std::shared_ptr<management::Fleet> &fleet)
         {
             if ((name == booking.Customer().m_name) && (lastName == booking.Customer().m_lastName))
             {
+                found = true;
                 fleet->Cars().at(carIndex).Bookings().erase(fleet->Cars().at(carIndex).Bookings().begin() + bookingIndex - 1);
                 std::cout << "Booking cancelled." << std::endl;
-            }
-            else
-            {
-                std::cout << "Booking not found under this name" << std::endl;
             }
             bookingIndex++;
         }
 
         carIndex++;
+    }
+    if (!found)
+    {
+        std::cout << "Booking not found under this name" << std::endl;
     }
 }
 
